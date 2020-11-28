@@ -10,6 +10,7 @@ import { CAMPSITES } from "../Shared/campsites";
 import { COMMENTS } from "../Shared/comments";
 import { PARTNERS } from "../Shared/partners";
 import { PROMOTIONS } from "../Shared/promotions";
+import About from "./AboutComponent";
 
 class Main extends Component {
   constructor(props) {
@@ -50,6 +51,7 @@ class Main extends Component {
           <Route path='/home' component={HomePage} />
           <Route exact path='/directory' render={() => <Directory campsites={this.state.campsites} />} />
           <Route path='/directory/:campsiteId' component={CampsiteWithId} />
+          <Route exact path='/aboutus' render={() => <About partners={this.state.partners} /> } />
           <Route exact path='/contactus' component = {Contact} />
           <Redirect to='/home' />
         </Switch>
